@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> User Registration Form </title>
+</head>
+
+<body>
+	<h2> User Registration Form </h2>
+
+	<form action="{{ url_for('register')}}" method="POST">
+		<div class="msg">{{ msg }}</div>
+		<input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+		<input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br></br>
+		<input id="mobile" name="mobile" type="number" placeholder="Enter Your Mobile No." class="textbox"/></br></br>
+		<input type="submit" class="btn" value="SUBMIT"></br>
+	</form>
+</body>
+</html>
