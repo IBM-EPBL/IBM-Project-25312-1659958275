@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: peta-deployment
+spec:
+   selector:
+     app: peta
+   ports:
+   - port: 5000
+   type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: peta-deployment
+spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: peta
+   template:
+     metadata:
+       labels:
+         app: peta
+     spec:
+       containers:
+       - name: peta
+         image: au.icr.io/peta-app/peta
+         imagePullPolicy: Always
+         ports:
+         - containerPort: 5000
